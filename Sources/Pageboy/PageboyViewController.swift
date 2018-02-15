@@ -92,6 +92,10 @@ open class PageboyViewController: UIViewController {
     /// The object that is the delegate for the page view controller.
     public weak var delegate: PageboyViewControllerDelegate?
     
+    /// The underlying gesture recognizer for pan gestures.
+    public var panGestureRecognizer: UIPanGestureRecognizer? {
+        return self.pageViewController?.scrollView?.panGestureRecognizer
+    }
     
     // default is YES. if NO, we immediately call -touchesShouldBegin:withEvent:inContentView:. this has no effect on presses
     public var delaysContentTouches: Bool = true {
